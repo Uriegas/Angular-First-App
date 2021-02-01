@@ -1,1 +1,21 @@
-<p>character-list works!</p>
+<div class="row">
+    <div class="col-xs-12 col-sml-6 col-md-4" *ngFor="let character of characters">
+        <div class="image">
+            <img [src]="character.image"
+            alt="character.name"
+            class = "card-img-top"
+            >
+        </div>
+        <div class="card-inner">
+            <div class="header">
+                <h2>character.name</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sml-6 col-md-4 container-notFound">
+        <p>No Results...</p>
+    </div>
+</div>
+<button class="btn btn-dark">
+    Up
+</button>
