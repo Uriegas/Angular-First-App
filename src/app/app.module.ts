@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RickymortyComponent } from './rickymorty/rickymorty.component';
 import { HeaderComponent } from './shared/component/header/header.component';
 import { FormSearchComponent } from './shared/component/form-search/form-search.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormSearchComponent } from './shared/component/form-search/form-search.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
