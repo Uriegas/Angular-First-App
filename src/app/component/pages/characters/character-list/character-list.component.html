@@ -7,10 +7,11 @@
             class = "card-img-top"
             >
         </div>
-        <div class="section">
+        <div class="info">
             <div class="header">
                 <h2>{{ character.name }}</h2>
                 <span class="status">
+                    <td [ngStyle] = "{'color': (character.status == 'Alive') ? 'green' : (character.status == 'Dead') ? 'red' : (character.status == 'unknown') ? 'gray' : ''}"> ⦁ </td>
                     <span class="status_icon">
                         {{ character.status }} - {{ character.gender}}
                     </span>
