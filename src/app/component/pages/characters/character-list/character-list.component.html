@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-xs-12 col-sml-6 col-md-4" *ngFor="let character of characters">
+    <article class="col-xs-12 col-sml-6 col-md-4" *ngFor="let character of characters">
         <div class="image">
             <img
             [src]="character.image"
@@ -7,7 +7,7 @@
             class = "card-img-top"
             >
         </div>
-        <div class="info">
+        <div class="text-light">
             <div class="header">
                 <h2>{{ character.name }}</h2>
                 <span class="status">
@@ -26,7 +26,7 @@
                 <span> {{character.origin.name}} </span>
             </div>
         </div>
-    </div>
+    </article>
     <div class="col-xs-12 col-sml-6 col-md-4 container-notFound">
         <p>No Results...</p>
     </div>
