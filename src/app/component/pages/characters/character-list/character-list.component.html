@@ -1,15 +1,18 @@
-<div class="row">
-    <article class="col-xs-12 col-sml-6 col-md-4" *ngFor="let character of characters">
-        <div class="image">
-            <img
-            [src]="character.image"
-            [alt]="character.name"
-            class = "card-img-top"
-            >
+<!--
+<div class="card mb-3" >
+    <article class="col-xs-12 col-sml-6 col-md-4 row no-gutters" *ngFor="let character of characters">
+        <div class="col-md-4">
+            <div class="image">
+                <img
+                [src]="character.image"
+                [alt]="character.name"
+                class = "card-img-top"
+                >
+            </div>
         </div>
-        <div class="text-light">
-            <div class="header">
-                <h2>{{ character.name }}</h2>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h2 class="card-title">{{ character.name }}</h2>
                 <span class="status">
                     <td [ngStyle] = "{'color': (character.status == 'Alive') ? 'green' : (character.status == 'Dead') ? 'red' : (character.status == 'unknown') ? 'gray' : ''}"> ⦁ </td>
                     <span class="status_icon">
@@ -31,6 +34,47 @@
         <p>No Results...</p>
     </div>
 </div>
+-->
+
+<div class="card text-white bg-dark mb-3" style="max-width: 540px;" *ngFor="let character of characters">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+        <img
+        [src]="character.image"
+        [alt]="character.name"
+        class = "card-img"
+        >
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"> {{character.name}} </h5>
+        <div class="card-text">
+            <td [ngStyle] = "{'color': (character.status == 'Alive') ? 'green' : (character.status == 'Dead') ? 'red' : (character.status == 'unknown') ? 'gray' : ''}"> ⦁ </td>
+            <p class="status_icon">
+                {{ character.status }} - {{ character.gender}}
+            </p>
+        </div>
+        <div>
+            <p class="card-text">
+                Last known location:
+            </p>
+            <p class="card-text">
+                {{ character.location.name }}
+            </p>
+        </div>
+        <div>
+            <p class="card-text">
+                First seen in:
+            </p>
+            <p class="card-text">
+                {{ character.origin.name }}
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <button class="btn btn-dark">
     Up
 </button>
