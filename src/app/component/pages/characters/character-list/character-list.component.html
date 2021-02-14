@@ -49,10 +49,10 @@
       <div class="card-body">
         <h5 class="card-title"> {{character.name}} </h5>
         <div class="card-text">
-            <td [ngStyle] = "{'color': (character.status == 'Alive') ? 'green' : (character.status == 'Dead') ? 'red' : (character.status == 'unknown') ? 'gray' : ''}"> ⦁ </td>
-            <p class="status_icon">
+            <td>
+                <span  [ngStyle] = "{'color': (character.status == 'Alive') ? 'green' : (character.status == 'Dead') ? 'red' : (character.status == 'unknown') ? 'gray' : ''}"> ⦁ </span> 
                 {{ character.status }} - {{ character.gender}}
-            </p>
+            </td>
         </div>
         <div>
             <p class="card-text">
