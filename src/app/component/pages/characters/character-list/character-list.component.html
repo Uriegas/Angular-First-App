@@ -36,47 +36,49 @@
 </div>
 -->
 
-<div class="row">
-<div class="card text-white mb-3 col-xs-12 col-sml-6" style="max-width: 570px; background-color: #333;" *ngFor="let character of characters">
-  <div class="row no-gutters">
-    <div class="col-md-5">
-        <img
-        [src]="character.image"
-        [alt]="character.name"
-        class = "card-img transcolor"
-        >
-    </div>
-    <div class="col-md-7">
-      <div class="card-body">
-        <h5 class="card-title font-weight-bold"> {{character.name}} </h5>
-        <div class="card-text">
-            <td>
-                <span  [ngStyle] = "{'color': (character.status == 'Alive') ? 'green' : (character.status == 'Dead') ? 'red' : (character.status == 'unknown') ? 'gray' : ''}"> ⦁ </span> 
-                {{ character.status }} - {{ character.gender}}
-            </td>
+<div class="row col-xs-12 col-sml-6 mb-3">
+    <div class="card text-white" style="width: 620px; background-color: #333;" *ngFor="let character of characters">
+    <div class="row no-gutters">
+        <div class="col-md-5">
+            <img
+            [src]="character.image"
+            [alt]="character.name"
+            class = "card-img transcolor"
+            >
         </div>
-        <div>
-            <p class="card-text text-muted">
-                Last known location:
+        <div class="col-md-14">
+        <div class="card-body">
+            <div class="card-text">
+            <h5 class="card-title font-weight-bold"> {{character.name}} </h5>
+                <td>
+                    <span  [ngStyle] = "{'color': (character.status == 'Alive') ? 'green' : (character.status == 'Dead') ? 'red' : (character.status == 'unknown') ? 'gray' : ''}"> ⦁ </span> 
+                    {{ character.status }} - {{ character.gender}}
+                </td>
+            </div>
+            <div>
+                <p class="card-text text-muted">
+                    Last known location:
+                </p>
+            </div>
+            <div>
+                <p class="card-text">
+                    {{ character.location.name }}
+                </p>
+                <p class="card-text text-muted">
+                    First seen in:
+                </p>
+            </div>
+            <div>
+                <p class="card-text">
+                    {{ character.origin.name }}
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
 
-            </p>
-            <p class="card-text">
-                {{ character.location.name }}
-            </p>
-        </div>
-        <div>
-            <p class="card-text text-muted">
-                First seen in:
-            </p>
-            <p class="card-text">
-                {{ character.origin.name }}
-            </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 <button class="btn btn-dark">
     Up
 </button>
