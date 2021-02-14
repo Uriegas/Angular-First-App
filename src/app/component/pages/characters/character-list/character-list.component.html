@@ -36,7 +36,7 @@
 </div>
 -->
 
-<div class="card text-white bg-dark mb-3" style="max-width: 540px;" *ngFor="let character of characters">
+<div class="card text-white bg-dark mb-4" style="max-width: 540px;" *ngFor="let character of characters">
   <div class="row no-gutters">
     <div class="col-md-4">
         <img
@@ -47,7 +47,7 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title"> {{character.name}} </h5>
+        <h5 class="card-title font-weight-bold"> {{character.name}} </h5>
         <div class="card-text">
             <td>
                 <span  [ngStyle] = "{'color': (character.status == 'Alive') ? 'green' : (character.status == 'Dead') ? 'red' : (character.status == 'unknown') ? 'gray' : ''}"> ⦁ </span> 
@@ -55,8 +55,9 @@
             </td>
         </div>
         <div>
-            <p class="card-text">
+            <p class="card-text text-muted">
                 Last known location:
+
             </p>
             <p class="card-text">
                 {{ character.location.name }}
